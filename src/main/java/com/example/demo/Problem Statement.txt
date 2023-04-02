@@ -1,0 +1,18 @@
+Create a project which will send messages (which contain some content and status
+ - SUCCESS/ERROR) via RabbitMQ, the application should receive the message and send a 
+ mail based on status. For example, if the status is SUCCESS, it should send mail of a
+  specified template with the details of the content
+
+If the status is ERROR, the mail should say that ERROR message received
+
+
+
+These details should also be stored in your h2/postgres db, so for successful mails, 
+save the details of the message, and the status
+
+For messages with ERROR status, store the status.
+
+There might also be issues with the mail sending, for example the template didn't get
+ correct data, or the receiver's mail is not valid. In this case, the table should store
+  that email was not sent for this message, and the reason why.
+
